@@ -34,18 +34,6 @@ class ProductManager {
     // Método que busca determinado producto según su 'id'.
     getProductById = (idProduct) => {
         const productIndex = this.products.findIndex((product) => product.id === idProduct);
-    
-        //Estructura que comunica un error al buscar un Id no asignado.
-        if (productIndex === -1 || !this.products[productIndex].id) {
-            console.log("Not Found or ID not assigned");
-            return;
-        }
-    
-        const addedProduct = this.products[productIndex].products.includes(idProduct);
-        if (addedProduct) {
-            console.log("Product added successfully");
-            return;
-        }
         this.products[productIndex].products.push(idProduct);
     };
 }
